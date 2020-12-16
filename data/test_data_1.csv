@@ -1,0 +1,6 @@
+FileName;FunctionName;NumStackAllocations;NumEscapingStackAllocations;TotalAllocatedStackMemory;TotalEscapingAllocatedStackMemory
+samples/sample.cpp;main;1;0;4;0
+samples/sample.cpp;anotherFunction(int, int);2;0;8;0
+samples/sample.cpp;escapingFunction();1;1;4;4
+samples/sample.cpp;nonEscapingFunction(int*);2;0;12;0
+samples/sample.cpp;definitelyNonEscapingFunction(int*);1;0;8;0
