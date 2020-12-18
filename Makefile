@@ -28,8 +28,8 @@ built_llvm_binaries/grep_dynamic.bc: built_llvm_binaries
 		CC=$(GCLANG) $(GREP_SOURCE)/configure; \
 		make
 	@echo "Extracting LLVM bitcode"
-	$(GET_BC) $(GREP_SOURCE)/src/grep.o
-	cp $(GREP_SOURCE)/src/grep.o.bc built_llvm_binaries/grep_dynamic.bc
+	$(GET_BC) $(GREP_SOURCE)/src/grep
+	cp $(GREP_SOURCE)/src/grep.bc built_llvm_binaries/grep_dynamic.bc
 
 # TODO: This one doesn't seem to work - maybe the LDFLAGS command is different for Clang?
 built_llvm_binaries/grep_static.bc: built_llvm_binaries
@@ -38,8 +38,8 @@ built_llvm_binaries/grep_static.bc: built_llvm_binaries
 		CC=$(GCLANG) $(GREP_SOURCE)/configure CFLAGS=-static LDFLAGS='-static -llibc'; \
 		make
 	@echo "Extracting LLVM bitcode"
-	$(GET_BC) $(GREP_SOURCE)/src/grep.o
-	cp $(GREP_SOURCE)/src/grep.o.bc built_llvm_binaries/grep_static.bc
+	$(GET_BC) $(GREP_SOURCE)/src/grep
+	cp $(GREP_SOURCE)/src/grep.bc built_llvm_binaries/grep_static.bc
 
 built_llvm_binaries/ocamlrun.bc: built_llvm_binaries
 	@echo "Compiling OCaml runtime from source"
