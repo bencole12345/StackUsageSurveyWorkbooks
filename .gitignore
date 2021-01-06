@@ -269,3 +269,4 @@ dmypy.json
 # Files generated from the analysis
 analysis_output
 built_llvm_binaries
+built_llvm_ir
